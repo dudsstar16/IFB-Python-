@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 prog1
+=======
+Inicial
+prog_2
+>>>>>>> 83ada5393f9f96586d4a3855c9197bf2aee624ea
