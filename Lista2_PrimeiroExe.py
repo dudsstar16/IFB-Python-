@@ -53,9 +53,11 @@ class carrinho_de_compras:
         if self.produtos == 0:
             print("Carrinho Vazio")
         else:
-            print("Produtos no Carrinho!")
+            print("\nSegue Abaixo os Produtos Listados no Carrinho, para conferencia...\n")
+            print("=" * 50)
             for produtos in self.produtos:
-                print(produtos)
+                print(f"\n- Nome: {produtos.get_nome()}, Preço: R$ {produtos.get_preco():.2f}, Quantidade: {produtos.get_quantidade()}")
+            print()
 
     def calcular_total(self):
         total = 0 
@@ -70,7 +72,7 @@ def main():
 
     while True:
         print("=" * 50)
-        print("Bem vindo(a) ao menu do seu carrinho !!! :D")
+        print("\nBem vindo(a) ao menu do seu carrinho !!! :D\n")
         print("=" * 50)
         print("\n1. Adicionar Produto")
         print("\n2. Remover Produto")
@@ -86,7 +88,7 @@ def main():
             quantidade = int(input("Insira a quantidade desejada: "))
             produto = Produto(nome, preco, quantidade)
             carrinho.add_produtos(produto)
-            print("Produto Adicionado com Sucesso...")
+            print("\nProduto Adicionado com Sucesso...\n")
             
         elif opcao == "2":
             nome = input("Qual Produto voce deseja remover: ")
@@ -97,9 +99,6 @@ def main():
 
         elif opcao == "3":
             carrinho.listar_produtos()
-            for produtos in carrinho.produtos:
-                print(f"- Nome:{produtos.get_nome()}, Preço: R${produtos.get_preco():.2f}, Quantidade:{produtos.get_quantidade()}")
-                print()
  
         elif opcao == "4":
             total = carrinho.calcular_total()
